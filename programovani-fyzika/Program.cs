@@ -19,7 +19,7 @@ namespace programovani_fyzika
             switch (volba)
             {
                 case '1':
-                    Console.WriteLine("Zadej dráhu v metrech (pouze číslo): ");
+                    Console.WriteLine("Zadejte dráhu v metrech (pouze číslo): ");
                     double draha = double.Parse(Console.ReadLine());
                     Console.WriteLine("Zadejte čas v sekundách (pouze číslo): ");
                     double cas = double.Parse(Console.ReadLine());
@@ -35,20 +35,20 @@ namespace programovani_fyzika
                     }
                     break;
                 case '2':
-                    Console.WriteLine("Zadejte čas v sekundách: ");
+                    Console.WriteLine("Zadejte čas v sekundách (pouze číslo): ");
                     double t = double.Parse(Console.ReadLine());
-                    Console.WriteLine("Zadejte zrychlení: ");
+                    Console.WriteLine("Zadejte zrychlení (pouze číslo): ");
                     double g = double.Parse(Console.ReadLine());
                     double h = 0.5 * g * Math.Pow(t, 2);
                     Console.WriteLine("Výsledek: " + "{0} cm", h * 100);
                     Console.WriteLine("Výsledek: " + "{0} m", h);
                     break;
                 case '3':
-                    Console.Write("Zadejte sílu (v Newtonech): ");
+                    Console.Write("Zadejte sílu (v Newtonech, pouze číslo): ");
                     double F = Double.Parse(Console.ReadLine());
-                    Console.Write("Zadej čas v sekundách: ");
+                    Console.Write("Zadej čas v sekundách (pouze číslo): ");
                     double cas2 = Double.Parse(Console.ReadLine());
-                    Console.Write("Zadejte úhel ve stupních: ");
+                    Console.Write("Zadejte úhel ve stupních (pouze číslo): ");
                     double uhel = Double.Parse(Console.ReadLine());
 
                     if (uhel > 90)
