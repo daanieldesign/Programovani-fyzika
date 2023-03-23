@@ -10,20 +10,23 @@ namespace programovani_fyzika
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Zadejte volbu a, b, c, d:");
-            Console.WriteLine("a – výpočet průměrné rychlosti auta, b – výpočet volného pádu tělesa, c – výpočet mechanické práce, d – výpočet nejvyšší výšky");
-            char volba = char.Parse(Console.ReadLine());
+            Console.WriteLine("Zadejte volbu z výběru – 1, 2, 3, 4:");
+            Console.WriteLine("1 – výpočet průměrné rychlosti auta");
+            Console.WriteLine("2 – výpočet volného pádu tělesa");
+            Console.WriteLine("3 – výpočet mechanické práce");
+            Console.WriteLine("4 – výpočet nejvyšší výšky");
+            int volba = char.Parse(Console.ReadLine());
             switch (volba)
             {
-                case 'a':
-                    Console.WriteLine("Zadej dráhu v metrech: ");
+                case '1':
+                    Console.WriteLine("Zadej dráhu v metrech (pouze číslo): ");
                     double draha = double.Parse(Console.ReadLine());
-                    Console.WriteLine("Zadejte čas v sekundách: ");
+                    Console.WriteLine("Zadejte čas v sekundách (pouze číslo): ");
                     double cas = double.Parse(Console.ReadLine());
                     double rychlost = draha / cas;
                     if (rychlost > 30)
                     {
-                        Console.WriteLine("Rychlost nemůže být vyšší než 30 m/s");
+                        Console.WriteLine("Rychlost nemůže být vyšší než 30 m/s.");
                     }
                     else
                     {
@@ -31,7 +34,7 @@ namespace programovani_fyzika
                         Console.WriteLine("Výsledek:" + "{0} km/h", rychlost * 3.6);
                     }
                     break;
-                case 'b':
+                case '2':
                     Console.WriteLine("Zadejte čas v sekundách: ");
                     double t = double.Parse(Console.ReadLine());
                     Console.WriteLine("Zadejte zrychlení: ");
@@ -40,25 +43,25 @@ namespace programovani_fyzika
                     Console.WriteLine("Výsledek: " + "{0} cm", h * 100);
                     Console.WriteLine("Výsledek: " + "{0} m", h);
                     break;
-                case 'c':
-                    Console.Write("Zadejte sílu v Newtonech: ");
+                case '3':
+                    Console.Write("Zadejte sílu (v Newtonech): ");
                     double F = Double.Parse(Console.ReadLine());
                     Console.Write("Zadej čas v sekundách: ");
-                    double time = Double.Parse(Console.ReadLine());
+                    double cas2 = Double.Parse(Console.ReadLine());
                     Console.Write("Zadejte úhel ve stupních: ");
                     double uhel = Double.Parse(Console.ReadLine());
 
                     if (uhel > 90)
                     {
-                        Console.WriteLine("Error: úhel nemůže být větší než 90 stupňů");
+                        Console.WriteLine("Úhel nemůže být větší než 90 stupňů.");
                     }
                     else
                     {
-                        double prace = F * Math.Cos(uhel * Math.PI / 180) * time;
+                        double prace = F * Math.Cos(uhel * Math.PI / 180) * cas2;
                         Console.WriteLine("Výsledek: " + "{0} J", prace);
                     }
                     break;
-                case 'd':
+                case '4':
                     Console.Write("Zadejte rychlost v jednotce m/s: ");
                     double V = Double.Parse(Console.ReadLine());
                     double maxH = Math.Pow(V, 2) / (2 * 9.81);
@@ -66,7 +69,7 @@ namespace programovani_fyzika
                     Console.WriteLine("{0} m", maxH);
                     break;
                 default:
-                    Console.WriteLine("V rozsahu není volba.");
+                    Console.WriteLine("Vaše zadaná hodnota není ve výběru. Jste na hlavu?");
                     break;
             }
             Console.ReadKey();
